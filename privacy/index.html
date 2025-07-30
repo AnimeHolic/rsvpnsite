@@ -252,64 +252,87 @@
 
       <section>
         <h3>1. Introduction</h3>
-        <p>PDFUnlocker is a mobile application designed to remove passwords from PDF files. We are committed to protecting your privacy and ensuring transparency about how we handle your data. This Privacy Policy explains how we collect, use, and protect your information when you use our app.</p>
+        <p>PDFUnlocker is a mobile application designed to remove passwords from PDF files on Android devices. Our mission is to provide a simple and secure tool to unlock password-protected PDFs while prioritizing your privacy. This Privacy Policy outlines how we collect, use, and protect your data, as well as the purpose of the permissions required by the app.</p>
       </section>
 
       <section>
-        <h3>2. Data We Collect</h3>
-        <p>PDFUnlocker does not collect, store, or share any personally identifiable information (e.g., name, email, or device identifiers) unless explicitly required for the app's functionality. The app only accesses the following data:</p>
+        <h3>2. Application Functionality</h3>
+        <p>PDFUnlocker offers the following features to help you manage password-protected PDF files:</p>
         <ul>
-          <li><strong>PDF Files</strong>: The app accesses PDF files selected by you to remove passwords and save the unlocked versions.</li>
-          <li><strong>No Other Data</strong>: We do not collect location data, contacts, or any other personal information.</li>
+          <li><strong>File Selection</strong>: Select a PDF file from your device's storage to check if it is password-protected.</li>
+          <li><strong>Password Removal</strong>: If the PDF is password-protected, you can enter the password to unlock it. The app removes both user and owner passwords, creating an unprotected copy of the file.</li>
+          <li><strong>File Saving</strong>: Unlocked PDFs are saved to a designated folder (<code>/storage/emulated/0/UnlockedPDFs</code>) with the prefix <code>unlocked_</code> added to the file name. Non-protected PDFs can be copied to this folder as is.</li>
+          <li><strong>User Feedback</strong>: The app provides clear feedback through dialogs and snackbars, informing you of success (e.g., "PDF unlocked successfully!") or errors (e.g., incorrect password or permission issues).</li>
+          <li><strong>Privacy and About Information</strong>: Access a privacy policy and usage guide within the app to understand how it works and how your data is handled.</li>
+        </ul>
+        <p>All processing occurs locally on your device, ensuring that your PDF files and their contents remain private and are not uploaded to any external servers.</p>
+      </section>
+
+      <section>
+        <h3>3. Data We Collect</h3>
+        <p>PDFUnlocker is designed to minimize data collection and protect your privacy. The app only accesses the following data:</p>
+        <ul>
+          <li><strong>PDF Files</strong>: The app accesses PDF files you explicitly select to check for password protection, remove passwords, and save the unlocked versions.</li>
+          <li><strong>No Personal Information</strong>: We do not collect personally identifiable information such as your name, email, location, contacts, or device identifiers.</li>
         </ul>
       </section>
 
       <section>
-        <h3>3. Permissions</h3>
-        <p>PDFUnlocker requires the following permissions to function properly:</p>
+        <h3>4. Permissions and Their Purpose</h3>
+        <p>PDFUnlocker requires specific permissions to function properly, as defined in the Android manifest. Below is a detailed explanation of each permission and why it is necessary:</p>
         <ul>
-          <li><strong>Storage Permission (READ_EXTERNAL_STORAGE and WRITE_EXTERNAL_STORAGE, Android SDK ≤ 33)</strong>: Allows the app to read the selected PDF file and save the unlocked PDF.</li>
-          <li><strong>Manage External Storage (MANAGE_EXTERNAL_STORAGE, Android SDK > 29)</strong>: Required for file access in modern Android versions.</li>
+          <li><strong>READ_EXTERNAL_STORAGE (Android SDK ≤ 33)</strong>: This permission allows the app to read the PDF file you select from your device's storage. It is required to access the file's contents and check if it is password-protected. Without this permission, the app cannot open the selected PDF file for processing.</li>
+          <li><strong>WRITE_EXTERNAL_STORAGE (Android SDK ≤ 33)</strong>: This permission enables the app to save the unlocked PDF file to the <code>/storage/emulated/0/UnlockedPDFs</code> folder on your device. It is necessary to create and store the new file after password removal or copying a non-protected PDF.</li>
+          <li><strong>MANAGE_EXTERNAL_STORAGE (Android SDK > 29)</strong>: For Android devices running SDK versions above 29 (Android 10 and later), this permission is required to read and write files in external storage due to Android's Scoped Storage framework. It allows the app to access and save files in the <code>/storage/emulated/0/UnlockedPDFs</code> folder, ensuring compatibility with modern Android versions. This permission is critical for the app to function on newer devices.</li>
         </ul>
-        <p>These permissions are solely used to enable the core functionality of selecting, processing, and saving PDF files.</p>
+        <p>These permissions are used solely for the app's core functionality of selecting, processing, and saving PDF files. The app checks the Android SDK version to request the appropriate permission, ensuring compatibility across different Android versions. If permissions are denied, the app displays a dialog explaining why they are needed and guides you to grant them or open app settings if permanently denied.</p>
       </section>
 
       <section>
-        <h3>4. How We Use Your Data</h3>
-        <p>The data accessed by PDFUnlocker is processed locally on your device to remove passwords. We do not upload or transmit your PDF files.</p>
-      </section>
-
-      <section>
-        <h3>5. Data Security</h3>
-        <p>All PDF processing is done locally. The app does not connect to the internet for file processing, ensuring full data privacy.</p>
-      </section>
-
-      <section>
-        <h3>6. Third-Party Libraries</h3>
-        <p>PDFUnlocker uses the following libraries:</p>
+        <h3>5. How We Use Your Data</h3>
+        <p>The data accessed by PDFUnlocker (i.e., PDF files) is processed locally on your device to perform the following tasks:</p>
         <ul>
-          <li><strong>Syncfusion Flutter PDF</strong>: For PDF processing</li>
-          <li><strong>File Picker</strong>: For file selection</li>
-          <li><strong>Permission Handler</strong>: For permissions</li>
-          <li><strong>Device Info Plus</strong>: For Android compatibility</li>
+          <li><strong>Check Password Protection</strong>: The app reads the selected PDF to determine if it is password-protected.</li>
+          <li><strong>Password Removal</strong>: If a password is provided, the app uses it to unlock the PDF and remove its security settings.</li>
+          <li><strong>File Saving</strong>: The unlocked or copied PDF is saved to the <code>/storage/emulated/0/UnlockedPDFs</code> folder.</li>
         </ul>
-        <p>These libraries may collect anonymous usage data but no personal data.</p>
+        <p>No data is uploaded, transmitted, or stored on external servers. All operations are performed locally to ensure your privacy.</p>
       </section>
 
       <section>
-        <h3>7. Your Rights</h3>
-        <p>We do not collect personal information. You have full control over your files and can delete them anytime.</p>
+        <h3>6. Data Security</h3>
+        <p>We prioritize the security of your data. All PDF processing is performed locally on your device, and the app does not require an internet connection for its core functionality. This ensures that your PDF files and their contents remain private and are not shared with any external entities.</p>
       </section>
 
       <section>
-        <h3>8. Changes to This Privacy Policy</h3>
-        <p>We may update this policy as needed. The updated version will be posted with a new date.</p>
+        <h3>7. Third-Party Libraries</h3>
+        <p>PDFUnlocker uses the following third-party libraries to provide its functionality:</p>
+        <ul>
+          <li><strong>Syncfusion Flutter PDF</strong>: Processes PDF files to check for password protection and remove passwords.</li>
+          <li><strong>File Picker</strong>: Enables you to select PDF files from your device's storage.</li>
+          <li><strong>Permission Handler</strong>: Manages storage permissions to ensure the app can access and save files.</li>
+          <li><strong>Device Info Plus</strong>: Retrieves your device's Android SDK version to determine which storage permissions to request, ensuring compatibility across Android versions.</li>
+        </ul>
+        <p>These libraries may collect anonymous usage data for crash reporting or performance improvements, but they do not collect personally identifiable information. Please review the respective privacy policies of these libraries for more details.</p>
       </section>
 
       <section>
-        <h3>9. Contact Us</h3>
-        <p>Email: <a href="mailto:contact@notragnar.com">contact@notragnar.com</a></p>
-        <p>We'll respond as soon as possible.</p>
+        <h3>8. Your Rights</h3>
+        <p>Since PDFUnlocker processes data locally and does not collect personal information, you have full control over your PDF files. You can delete the files from your device at any time. If you have concerns about your data or the app's functionality, please contact us.</p>
+      </section>
+
+      <section>
+        <h3>9. Changes to This Privacy Policy</h3>
+        <p>We may update this Privacy Policy to reflect changes in our practices or legal requirements. The updated policy will be posted within the app and on this webpage with a revised "Last Updated" date. We encourage you to review this policy periodically.</p>
+      </section>
+
+      <section>
+        <h3>10. Contact Us</h3>
+        <p>If you have any questions, concerns, or complaints about this Privacy Policy, the app's functionality, or our data practices, please contact us at:</p>
+        <ul>
+          <li>Email: <a href="mailto:contact@notragnar.com">contact@notragnar.com</a></li>
+        </ul>
+        <p>We will respond to your inquiries as soon as possible.</p>
       </section>
     </div>
   </main>
