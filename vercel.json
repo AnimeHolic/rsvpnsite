@@ -4,9 +4,23 @@
     {
       "src": "privacy/index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "app-ads.txt",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
-    { "src": "/privacy", "dest": "/privacy/index.html" }
+    {
+      "src": "/privacy",
+      "dest": "/privacy/index.html"
+    },
+    {
+      "src": "/app-ads.txt",
+      "dest": "/app-ads.txt",
+      "headers": {
+        "Content-Type": "text/plain"
+      }
+    }
   ]
 }
